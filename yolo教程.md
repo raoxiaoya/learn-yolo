@@ -2,20 +2,6 @@ yolo11超详细教程
 
 
 
-阅读
-
-[YOLO系列发展历程：从YOLOv1到YOLO11，目标检测技术的革新与突破](https://mp.weixin.qq.com/s/Fol-Y_C46Yervorfx07z5Q)
-
-[YOLO11详解](https://mp.weixin.qq.com/s/iTwprX2crSc13Sahtsfa_g)
-
-[YOLO模型综述：YOLO11及其前身的全面基准研究](https://mp.weixin.qq.com/s/QFomq1oM2Smgm8OY9DaaRQ)
-
-[Ultralytics：YOLO11使用教程](https://blog.csdn.net/FriendshipTang/article/details/142772535)
-
-[YOLOv11超详细环境搭建以及模型训练（GPU版本）](https://blog.csdn.net/2401_85556416/article/details/143378148)
-
-
-
 ### 一、YOLO11简介
 
 [ultralytics](https://github.com/ultralytics/ultralytics)：是一个框架，通过它可以使用YOLO11模型，会自动下载模型到当前目录（自己手动在浏览器下载要快很多），支持YOLOv2到YOLO11。
@@ -183,11 +169,11 @@ pip install ultralytics
 
 从图像或视频流中，识别对象的位置和类别。
 
-物体检测器的输出是一组包围图像中物体的边框，以及每个边框的类标签和置信度分数。如果您需要识别场景中感兴趣的物体，但又不需要知道物体的具体位置或确切形状，那么物体检测就是一个不错的选择。
+物体检测器的输出是一组包围图像中物体的边框，以及每个边框的类别标签和置信度分数。如果您需要识别场景中感兴趣的物体，但又不需要知道物体的具体位置或确切形状，那么物体检测就是一个不错的选择。
 
 Predict：https://docs.ultralytics.com/modes/predict/
 
-我们知道，Detect 功能是在 COCO 数据集上训练的，那这个 COCO 数据集可以识别哪些东西呢。我们打开`ultralytics/cfg/datasets/coco.yaml`文件，里面列出了 80 个物体名称，
+我们知道，Detect 功能是在 COCO 数据集上训练的，那这个 COCO 数据集可以识别哪些东西呢。我们打开`ultralytics/cfg/datasets/coco.yaml`文件，里面列出了 80 个物体名称。
 
 ```python
 from ultralytics import YOLO
@@ -405,7 +391,7 @@ xyn: tensor([[[0.4512, 0.1171],
          [0.1966, 0.8371]]])
 ```
 
-`conf`：每个点的得分
+`conf`：每个点的置信度
 
 `xy`：每一个点的x,y坐标
 
@@ -637,10 +623,6 @@ def obb():
 
 如果你要检测的对象在YOLO11的训练集上没有，或者你的使用场景不同导致预训练模型的效果不佳，那就需要自己来准备数据集和训练了。
 
-YOLO11的训练非常简单，麻烦的是数据集的准备，以及一定的算力支持。
-
-
-
 以 Detection Task 为例：https://docs.ultralytics.com/tasks/detect/#train
 
 Train YOLO11n on the COCO8 dataset for 100 [epochs](https://www.ultralytics.com/glossary/epoch) at image size 640. For a full list of available arguments see the [Configuration](https://docs.ultralytics.com/usage/cfg/) page.
@@ -674,13 +656,11 @@ urls = [
 ]
 ```
 
-图片上标注出了分类ID
-
 
 
 **COCO8 数据集**
 
-这是一个小数据集，用于对象检测，包括 COCO train2017 中的前8张图片，4个是用来训练，4个用来验证。COCO8 是tesing 和 debugging 对象检测模型的理想数据集，或者实验新的检测方法。其zip大小只有1M。
+这是一个小数据集，用于对象检测，它包含 COCO train2017 中的前8张图片，4个是用来训练，4个用来验证。COCO8 是tesing 和 debugging 对象检测模型的理想数据集，或者实验新的检测方法。其zip大小只有1M。
 
 coco8的yaml定义跟coco几乎一样。虽然它只有8张图片，但是每张图片上可以有多个对象，因此，它依然有80个分类。
 
@@ -755,7 +735,7 @@ coco8
 
 
 
-**准备数据集**
+**自己标注**
 
 我们可以使用 `labelimg`工具来自己标注。
 
@@ -769,7 +749,7 @@ coco8
 └── 微信截图_20250210101922.txt
 ```
 
-微信截图_20250210101922.txt
+`微信截图_20250210101922.txt`
 
 ```txt
 0 0.574367 0.505495 0.541139 0.824176
@@ -778,7 +758,7 @@ coco8
 
 这里的0, 1是序号而不是对象ID
 
-classes.txt
+`classes.txt`
 
 ```txt
 0
@@ -793,13 +773,11 @@ classes.txt
 
 如果没有自己的数据集，本文提供一个小型数据集（摘自SIMD公共数据集）以供测试代码，包含24张训练集以及20张测试集，约17.7MB，百度云链接：https://pan.baidu.com/s/1sCivMDjfAmUZK1J2P2_Dtg?pwd=1234
 
-
-
 我们使用自有数据集来训练模型，也需要按照 `coco.yaml`的格式来定义配置
 
 `train` 训练集，`val`验证集，`test`测试集
 
-在定义`train/val/test`的时候，可以是文件夹（比如 coco8.yaml），表示这个目录下的图片是做这个事的，当然你要讲图片复制进去。也可以是`xxx.txt`文件（比如 coco.yaml），把图片文件名列进去。
+在定义`train/val/test`的时候，可以是文件夹（比如 coco8.yaml），表示这个目录下的图片是做这个事的，当然你要将图片复制进去。也可以是`xxx.txt`文件（比如 coco.yaml），把图片文件名列进去。
 
 ```bash
 path: ../datasets/coco # dataset root dir
@@ -845,7 +823,6 @@ names:
   12: "Pushback Truck"
   13: "Helicopter"
   14: "Boat"
-
 ```
 
 path 最好填绝对路径，否则它会使用`DATASETS_DIR + path`，而`DATASETS_DIR`的值在`C:\Users\Administrator.DESKTOP-TPJL4TC\AppData\Roaming\Ultralytics\settings.json`中。
@@ -863,9 +840,16 @@ def train():
                           amp=True, mosaic=False, project='runs/train', name='exp')
 ```
 
-epochs 训练多少轮，通常要大于100
+- epochs 训练多少轮，通常要大于100
+- cache 是否缓存数据集以加快后续训练速度
+- batch 输入端每次输入几张图片，这个受限于内存大小
+- workers 设置用于数据加载的线程数，更多线程可以加快数据加载速度
 
-batch 输入端每次输入几张图片，这个受限于内存大小
+
+
+
+
+
 
 Train Settings：https://docs.ultralytics.com/usage/cfg/#train-settings
 
@@ -1047,6 +1031,11 @@ def predict2():
         result.save(filename="imgs_result/"+filename+".jpg")
 ```
 
+```bash
+0: 480x640 (no detections), 133.2ms
+Speed: 6.1ms preprocess, 133.2ms inference, 1.1ms postprocess per image at shape (1, 3, 480, 640)
+```
+
 但是它并没有检测到对象。。。
 
 于是将 train 的 epochs 改成 100，重新训练。这次它能识别到了。
@@ -1068,15 +1057,13 @@ Speed: 5.4ms preprocess, 134.8ms inference, 2.0ms postprocess per image at shape
 
 
 
+**阅读**
 
+[YOLO系列发展历程：从YOLOv1到YOLO11，目标检测技术的革新与突破](https://mp.weixin.qq.com/s/Fol-Y_C46Yervorfx07z5Q)
 
-训练YOLO11模型 https://blog.csdn.net/StopAndGoyyy/article/details/143169639
+[YOLO11详解](https://mp.weixin.qq.com/s/iTwprX2crSc13Sahtsfa_g)
 
-
-
-
-
-
+[YOLO模型综述：YOLO11及其前身的全面基准研究](https://mp.weixin.qq.com/s/QFomq1oM2Smgm8OY9DaaRQ)
 
 
 
