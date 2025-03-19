@@ -1,0 +1,23 @@
+# dataset path
+path: D:\dev\php\magook\trunk\server\learn-yolo\datasets\simd
+train: images/train
+val: images/test
+test: images/test
+
+# Classes
+names:
+  0: "car"
+  1: "Truck"
+  2: "Van"
+  3: "Long Vehicle"
+  4: "Bus"
+  5: "Airliner"
+  6: "Propeller Aircraft"
+  7: "Trainer Aircraft"
+  8: "Chartered Aircraft"
+  9: "Fighter Aircraft"
+  10: "Others"
+  11: "Stair Truck"
+  12: "Pushback Truck"
+  13: "Helicopter"
+  14: "Boat"

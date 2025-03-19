@@ -4,6 +4,7 @@ import cv2
 from collections import defaultdict
 import numpy as np
 import threading
+import os
 
 
 def detect():
@@ -194,5 +195,25 @@ def obb():
         filename = util.generate_random_string(15)
         result.save(filename="imgs_result/"+filename+".jpg")
 
+
+def train():
+    os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
+    model = YOLO('yolo11n.pt')
+    results = model.train(data='./simd.yaml', epochs=100, batch=1, imgsz=640, cache=False,
+                          amp=True, mosaic=False, project='runs_1/train', name='exp')
+    
+def val():
+    os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
+    model = YOLO("runs_1/train/exp4/weights/best.pt")
+    results = model.val(data='./simd.yaml', split='val', batch=1, project='runs_1/val', name='exp', half=False)
+
+def predict2():
+    model = YOLO("runs_1/train/exp/weights/best.pt")
+    results = model(["datasets/simd/images/train/0011.jpg"])
+
+    for k, result in enumerate(results):
+        filename = util.generate_random_string(15)
+        result.save(filename="imgs_result/"+filename+".jpg")
+
 if __name__ == "__main__":
-    obb()
+    predict2()

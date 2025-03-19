@@ -1,76 +1,14 @@
-yolo教程
+yolo11超详细教程
 
 
 
-
-
-
-
-
-
-[YOLOv12入门教程](https://mp.weixin.qq.com/s/2YUXLl2X_4t396frEDgOCg)
+阅读
 
 [YOLO系列发展历程：从YOLOv1到YOLO11，目标检测技术的革新与突破](https://mp.weixin.qq.com/s/Fol-Y_C46Yervorfx07z5Q)
-
-[YOLOv12 初学者使用教程](https://mp.weixin.qq.com/s/VSoG9YOr1dGh5WaHJlraow)
-
-[手把手教你玩转YOLOv12目标检测：从环境配置、模型训练、验证、推理的全流程指南](https://mp.weixin.qq.com/s/V_AqZOIfVL8MyPjI5Iw8cw)
-
-[YOLOv12保姆级使用教程重磅来袭，教你如何找熊猫](https://mp.weixin.qq.com/s/8rKXUYzMWpVObQKItgpHRg)
-
-
-
-YOLO（You Only Look Once）
-
-state-of-the-art (SOTA)
-
-可以实现的功能：分类classify，检测detect，姿态估计Pose estimation 
-
-YOLOv12：https://github.com/sunsmarterjie/yolov12
-
-
-
-目前最新的是YOLOV12，2025年2月发布
-
-YOLOV12分为两个版本：Turbo，v1.0
-
-**Turbo (default version)**:
-
-| Model                                                        | size (pixels) | mAPval 50-95 | Speed T4 TensorRT10 | params (M) | FLOPs (G) |
-| ------------------------------------------------------------ | ------------- | ------------ | ------------------- | ---------- | --------- |
-| [YOLO12n](https://github.com/sunsmarterjie/yolov12/releases/download/turbo/yolov12n.pt) | 640           | 40.4         | 1.60                | 2.5        | 6.0       |
-| [YOLO12s](https://github.com/sunsmarterjie/yolov12/releases/download/turbo/yolov12s.pt) | 640           | 47.6         | 2.42                | 9.1        | 19.4      |
-| [YOLO12m](https://github.com/sunsmarterjie/yolov12/releases/download/turbo/yolov12m.pt) | 640           | 52.5         | 4.27                | 19.6       | 59.8      |
-| [YOLO12l](https://github.com/sunsmarterjie/yolov12/releases/download/turbo/yolov12l.pt) | 640           | 53.8         | 5.83                | 26.5       | 82.4      |
-| [YOLO12x](https://github.com/sunsmarterjie/yolov12/releases/download/turbo/yolov12x.pt) | 640           | 55.4         | 10.38               | 59.3       | 184.6     |
-
-[**v1.0**](https://github.com/sunsmarterjie/yolov12/tree/V1.0):
-
-| Model                                                        | size (pixels) | mAPval 50-95 | Speed T4 TensorRT10 | params (M) | FLOPs (G) |
-| ------------------------------------------------------------ | ------------- | ------------ | ------------------- | ---------- | --------- |
-| [YOLO12n](https://github.com/sunsmarterjie/yolov12/releases/download/v1.0/yolov12n.pt) | 640           | 40.6         | 1.64                | 2.6        | 6.5       |
-| [YOLO12s](https://github.com/sunsmarterjie/yolov12/releases/download/v1.0/yolov12s.pt) | 640           | 48.0         | 2.61                | 9.3        | 21.4      |
-| [YOLO12m](https://github.com/sunsmarterjie/yolov12/releases/download/v1.0/yolov12m.pt) | 640           | 52.5         | 4.86                | 20.2       | 67.5      |
-| [YOLO12l](https://github.com/sunsmarterjie/yolov12/releases/download/v1.0/yolov12l.pt) | 640           | 53.7         | 6.77                | 26.4       | 88.9      |
-| [YOLO12x](https://github.com/sunsmarterjie/yolov12/releases/download/v1.0/yolov12x.pt) | 640           | 55.2         | 11.79               | 59.1       | 199.0     |
-
-
-
------
-
-
-
-
-
-
-
-
 
 [YOLO11详解](https://mp.weixin.qq.com/s/iTwprX2crSc13Sahtsfa_g)
 
 [YOLO模型综述：YOLO11及其前身的全面基准研究](https://mp.weixin.qq.com/s/QFomq1oM2Smgm8OY9DaaRQ)
-
-[YOLOv11入门到入土使用教程(含结构图)](https://blog.csdn.net/StopAndGoyyy/article/details/143169639)
 
 [Ultralytics：YOLO11使用教程](https://blog.csdn.net/FriendshipTang/article/details/142772535)
 
@@ -78,11 +16,11 @@ YOLOV12分为两个版本：Turbo，v1.0
 
 
 
-#### 一、YOLO11简介
+### 一、YOLO11简介
 
 [ultralytics](https://github.com/ultralytics/ultralytics)：是一个框架，通过它可以使用YOLO11模型，会自动下载模型到当前目录（自己手动在浏览器下载要快很多），支持YOLOv2到YOLO11。
 
-YOLO11的模型都不大，yolo11n.pt 为5.4M，yolo11x.pt 为109M。
+YOLO11的模型都不大，`yolo11n.pt` 为5.4M，`yolo11x.pt` 为109M。
 
 ultralytics文档：https://docs.ultralytics.com/
 
@@ -98,11 +36,11 @@ YOLO11 [Detect](https://docs.ultralytics.com/tasks/detect/), [Segment](https://d
 
 size (pixels)：图片像素 640 * 640
 
-mAP：平均精度
+mAP：平均精度均值
 
 Speed：推理时间，毫秒
 
-params (M)：参数量，百万
+params (M)：参数量，百万级
 
 FLOPs (G)：每秒浮点运算次数。G表示10亿，可以用来衡量算法/模型复杂度，理论上该数值越高越好
 
@@ -118,17 +56,14 @@ YOLO11m 在准确性、效率、模型大小之间取得了最佳平衡
 
 **模型功能**
 
-Detect：物体检测
+- Detect：物体检测
+- Segment：图像分割
+- Classify：分类
+- Pose：人体姿态推断
+- OBB：定向物体检测，检测框有一定的倾斜角度
+- Track：物体追踪
 
-Segment：图像分割
 
-Classify：分类
-
-Pose：人体姿态推断
-
-OBB：定向物体检测，检测框有一定的倾斜角度
-
-Track：物体追踪
 
 ![image-20250313105036683](D:\dev\php\magook\trunk\server\md\img\image-20250313105036683.png)
 
@@ -223,7 +158,7 @@ See [OBB Docs](https://docs.ultralytics.com/tasks/obb/) for usage examples with 
 
 
 
-### 一、使用YOLO11模型
+### 二、使用YOLO11模型
 
 环境准备
 
@@ -698,57 +633,450 @@ def obb():
 
 
 
+### 三、训练YOLO11模型的 Detection Task
+
+如果你要检测的对象在YOLO11的训练集上没有，或者你的使用场景不同导致预训练模型的效果不佳，那就需要自己来准备数据集和训练了。
+
+YOLO11的训练非常简单，麻烦的是数据集的准备，以及一定的算力支持。
 
 
-`requirements.txt`
+
+以 Detection Task 为例：https://docs.ultralytics.com/tasks/detect/#train
+
+Train YOLO11n on the COCO8 dataset for 100 [epochs](https://www.ultralytics.com/glossary/epoch) at image size 640. For a full list of available arguments see the [Configuration](https://docs.ultralytics.com/usage/cfg/) page.
+
+从上面我们知道，Detect 是在 COCO 数据集上训练的，那此处为什么又说 COCO8，这两者有什么区别？
+
+**COCO 数据集**
+
+COCO说明：https://docs.ultralytics.com/datasets/detect/coco/
+
+> **COCO（Common Objects in Context，常见物体上下文）数据集** 是一个大规模的目标检测、分割和字幕生成数据集。它旨在鼓励对广泛物体类别进行研究，并常用于计算机视觉模型的性能基准测试。对于从事目标检测、分割和姿态估计任务的研究人员及开发者而言，COCO数据集是不可或缺的核心资源。
+
+COCO 训练了 `YOLO11n ~ YOLO11x`模型
+
+COCO 官网：https://cocodataset.org/#home
+
+主要特点
+
+- COCO数据集包含了33万张图像，其中20万张图像具有针对目标检测、分割和字幕生成任务的标注。
+- 该数据集包含了80个物体类别，包括像汽车、自行车和动物这样的常见物体，以及更具体的类别，如雨伞、手提包和运动器材。
+- 标注信息包括每个图像的对象边界框、分割掩膜和字幕。
+- COCO提供了标准化的评估指标，如用于目标检测的平均精度均值（mAP）和用于分割任务的平均召回率均值（mAR），使其适合于比较模型性能。
+
+打开`ultralytics\cfg\datasets\coco.yaml`文件
 
 ```bash
-certifi==2022.12.7
-charset-normalizer==2.1.1
-colorama==0.4.6
-contourpy==1.2.0
-cycler==0.12.1
-filelock==3.9.0
-fonttools==4.50.0
-fsspec==2024.6.1
-huggingface-hub==0.23.4
-idna==3.4
-Jinja2==3.1.2
-kiwisolver==1.4.5
-MarkupSafe==2.1.3
-matplotlib==3.8.3
-mpmath==1.3.0
-networkx==3.2.1
-numpy==1.26.3
-opencv-python==4.9.0.80
-packaging==24.0
-pandas==2.2.1
-pillow==10.2.0
-psutil==5.9.8
-py-cpuinfo==9.0.0
-pyparsing==3.1.2
-python-dateutil==2.9.0.post0
-pytz==2024.1
-PyYAML==6.0.1
-requests==2.28.1
-scipy==1.12.0
-seaborn==0.13.2
-six==1.16.0
-sympy==1.12
-thop==0.1.1.post2209072238
-torch==2.0.0+cu118
-torchaudio==2.0.1+cu118
-torchvision==0.15.1+cu118
-tqdm==4.66.2
-typing_extensions==4.8.0
-tzdata==2024.1
-ultralytics==8.1.34
-urllib3==1.26.13
+urls = [
+	"http://images.cocodataset.org/zips/train2017.zip",  # 19G, 118k images
+	"http://images.cocodataset.org/zips/val2017.zip",  # 1G, 5k images
+	"http://images.cocodataset.org/zips/test2017.zip",  # 7G, 41k images (optional)
+]
+```
+
+图片上标注出了分类ID
+
+
+
+**COCO8 数据集**
+
+这是一个小数据集，用于对象检测，包括 COCO train2017 中的前8张图片，4个是用来训练，4个用来验证。COCO8 是tesing 和 debugging 对象检测模型的理想数据集，或者实验新的检测方法。其zip大小只有1M。
+
+coco8的yaml定义跟coco几乎一样。虽然它只有8张图片，但是每张图片上可以有多个对象，因此，它依然有80个分类。
+
+![image-20250318155438995](D:\dev\php\magook\trunk\server\md\img\image-20250318155438995.png)
+
+
+
+**imageNet 数据集**
+
+在计算机视觉领域这是一个非常有名的数据集，它的特点是一张图片上只聚焦一个对象，也就说一个图片只会被识别成一个对象，所以被用来做classification。
+
+![image-20250318160322904](D:\dev\php\magook\trunk\server\md\img\image-20250318160322904.png)
+
+官网 https://www.image-net.org/
+
+
+
+**准备数据集**
+
+我们先来参考一下 [coco8](https://github.com/ultralytics/assets/releases/download/v0.0.0/coco8.zip) ，下载解压后
+
+```bash
+tree coco8
+
+coco8
+├── LICENSE
+├── README.md
+├── images
+│   ├── train
+│   │   ├── 000000000009.jpg
+│   │   ├── 000000000025.jpg
+│   │   ├── 000000000030.jpg
+│   │   └── 000000000034.jpg
+│   └── val
+│       ├── 000000000036.jpg
+│       ├── 000000000042.jpg
+│       ├── 000000000049.jpg
+│       └── 000000000061.jpg
+└── labels
+    ├── train
+    │   ├── 000000000009.txt
+    │   ├── 000000000025.txt
+    │   ├── 000000000030.txt
+    │   └── 000000000034.txt
+    └── val
+        ├── 000000000036.txt
+        ├── 000000000042.txt
+        ├── 000000000049.txt
+        └── 000000000061.txt
+```
+
+`images`里面放的是原始图片，`labels`放的是标签信息。
+
+`000000000009.jpg`
+
+![image-20250318172611750](D:\dev\php\magook\trunk\server\md\img\image-20250318172611750.png)
+
+`000000000009.txt`
+
+```txt
+45 0.479492 0.688771 0.955609 0.5955
+45 0.736516 0.247188 0.498875 0.476417
+50 0.637063 0.732938 0.494125 0.510583
+45 0.339438 0.418896 0.678875 0.7815
+49 0.646836 0.132552 0.118047 0.0969375
+49 0.773148 0.129802 0.0907344 0.0972292
+49 0.668297 0.226906 0.131281 0.146896
+49 0.642859 0.0792187 0.148063 0.148062
+```
+
+分别为：对象ID，标注框中心点X坐标（归一化值），标注框中心点Y坐标，标注框宽，标注框高
+
+
+
+**准备数据集**
+
+我们可以使用 `labelimg`工具来自己标注。
+
+参考：[深度学习工具|LabelImg（标注工具）的安装与使用教程](https://blog.csdn.net/StopAndGoyyy/article/details/139906637)
+
+![image-20250318173355028](D:\dev\php\magook\trunk\server\md\img\image-20250318173355028.png)
+
+```bash
+├── classes.txt
+├── 微信截图_20250210101900.txt
+└── 微信截图_20250210101922.txt
+```
+
+微信截图_20250210101922.txt
+
+```txt
+0 0.574367 0.505495 0.541139 0.824176
+1 0.313291 0.195055 0.234177 0.351648
+```
+
+这里的0, 1是序号而不是对象ID
+
+classes.txt
+
+```txt
+0
+38
+```
+
+这才是对象ID
+
+得到的结构与 coco8 还不一样，还需要将对象ID填充进去。
+
+
+
+如果没有自己的数据集，本文提供一个小型数据集（摘自SIMD公共数据集）以供测试代码，包含24张训练集以及20张测试集，约17.7MB，百度云链接：https://pan.baidu.com/s/1sCivMDjfAmUZK1J2P2_Dtg?pwd=1234
+
+
+
+我们使用自有数据集来训练模型，也需要按照 `coco.yaml`的格式来定义配置
+
+`train` 训练集，`val`验证集，`test`测试集
+
+在定义`train/val/test`的时候，可以是文件夹（比如 coco8.yaml），表示这个目录下的图片是做这个事的，当然你要讲图片复制进去。也可以是`xxx.txt`文件（比如 coco.yaml），把图片文件名列进去。
+
+```bash
+path: ../datasets/coco # dataset root dir
+train: train2017.txt # train images (relative to 'path') 118287 images
+val: val2017.txt # val images (relative to 'path') 5000 images
+test: test-dev2017.txt
 ```
 
 ```bash
-pip install -r requirements.txt
+path: ../datasets/coco8 # dataset root dir
+train: images/train # train images (relative to 'path') 4 images
+val: images/val # val images (relative to 'path') 4 images
+test: # test images (optional)
 ```
+
+
+
+将SIMD公共数据集解压到 `datasets/simd` 目录下
+
+`simd.yaml`
+
+```yaml
+# dataset path
+path: D:\dev\php\magook\trunk\server\learn-yolo\datasets\simd
+train: images/train
+val: images/test
+test: images/test
+
+# Classes
+names:
+  0: "car"
+  1: "Truck"
+  2: "Van"
+  3: "Long Vehicle"
+  4: "Bus"
+  5: "Airliner"
+  6: "Propeller Aircraft"
+  7: "Trainer Aircraft"
+  8: "Chartered Aircraft"
+  9: "Fighter Aircraft"
+  10: "Others"
+  11: "Stair Truck"
+  12: "Pushback Truck"
+  13: "Helicopter"
+  14: "Boat"
+
+```
+
+path 最好填绝对路径，否则它会使用`DATASETS_DIR + path`，而`DATASETS_DIR`的值在`C:\Users\Administrator.DESKTOP-TPJL4TC\AppData\Roaming\Ultralytics\settings.json`中。
+
+![image-20250319101538278](D:\dev\php\magook\trunk\server\md\img\image-20250319101538278.png)
+
+**训练模型**
+
+```python
+def train():
+   os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
+   model = YOLO('yolo11n.pt')
+
+   results = model.train(data='./simd.yaml', epochs=10, batch=1, imgsz=640, cache=False,
+                          amp=True, mosaic=False, project='runs/train', name='exp')
+```
+
+epochs 训练多少轮，通常要大于100
+
+batch 输入端每次输入几张图片，这个受限于内存大小
+
+Train Settings：https://docs.ultralytics.com/usage/cfg/#train-settings
+
+```bash
+Ultralytics 8.3.89 🚀 Python-3.11.4 torch-2.6.0+cpu CPU (Intel Core(TM) i7-4790 3.60GHz)
+engine\trainer: task=detect, mode=train, model=yolo11n.pt, data=./simd.yaml, epochs=10, time=None, patience=100, batch=1, imgsz=640, save=True, save_period=-1, cache=False,
+ device=None, workers=8, project=runs/train, name=exp4, exist_ok=False, pretrained=True, optimizer=auto, verbose=True, seed=0, deterministic=True, single_cls=False, rect=Fa
+lse, cos_lr=False, close_mosaic=10, resume=False, amp=True, fraction=1.0, profile=False, freeze=None, multi_scale=False, overlap_mask=True, mask_ratio=4, dropout=0.0, val=T
+rue, split=val, save_json=False, save_hybrid=False, conf=None, iou=0.7, max_det=300, half=False, dnn=False, plots=True, source=None, vid_stride=1, stream_buffer=False, visu
+alize=False, augment=False, agnostic_nms=False, classes=None, retina_masks=False, embed=None, show=False, save_frames=False, save_txt=False, save_conf=False, save_crop=Fals
+e, show_labels=True, show_conf=True, show_boxes=True, line_width=None, format=torchscript, keras=False, optimize=False, int8=False, dynamic=False, simplify=True, opset=None
+, workspace=None, nms=False, lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=7.5, cls=0.5, dfl=1.5,
+ pose=12.0, kobj=1.0, nbs=64, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.1, scale=0.5, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, bgr=0.0, mosaic=
+False, mixup=0.0, copy_paste=0.0, copy_paste_mode=flip, auto_augment=randaugment, erasing=0.4, crop_fraction=1.0, cfg=None, tracker=botsort.yaml, save_dir=runs\train\exp4
+Overriding model.yaml nc=80 with nc=15
+
+                   from  n    params  module                                       arguments
+  0                  -1  1       464  ultralytics.nn.modules.conv.Conv             [3, 16, 3, 2]
+  1                  -1  1      4672  ultralytics.nn.modules.conv.Conv             [16, 32, 3, 2]
+  2                  -1  1      6640  ultralytics.nn.modules.block.C3k2            [32, 64, 1, False, 0.25]
+  3                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]
+  4                  -1  1     26080  ultralytics.nn.modules.block.C3k2            [64, 128, 1, False, 0.25]
+  5                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]
+  6                  -1  1     87040  ultralytics.nn.modules.block.C3k2            [128, 128, 1, True]
+  7                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]
+  8                  -1  1    346112  ultralytics.nn.modules.block.C3k2            [256, 256, 1, True]
+  9                  -1  1    164608  ultralytics.nn.modules.block.SPPF            [256, 256, 5]
+ 10                  -1  1    249728  ultralytics.nn.modules.block.C2PSA           [256, 256, 1]
+ 11                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+ 12             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 13                  -1  1    111296  ultralytics.nn.modules.block.C3k2            [384, 128, 1, False]
+ 14                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+ 15             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 16                  -1  1     32096  ultralytics.nn.modules.block.C3k2            [256, 64, 1, False]
+ 17                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]
+ 18            [-1, 13]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 19                  -1  1     86720  ultralytics.nn.modules.block.C3k2            [192, 128, 1, False]
+ 20                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]
+ 21            [-1, 10]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 22                  -1  1    378880  ultralytics.nn.modules.block.C3k2            [384, 256, 1, True]
+ 23        [16, 19, 22]  1    433597  ultralytics.nn.modules.head.Detect           [15, [64, 128, 256]]
+YOLO11n summary: 181 layers, 2,592,765 parameters, 2,592,749 gradients, 6.5 GFLOPs
+
+Transferred 448/499 items from pretrained weights
+Freezing layer 'model.23.dfl.conv.weight'
+train: Scanning D:\dev\php\magook\trunk\server\learn-yolo\datasets\simd\labels\train... 24 images, 0 backgrounds, 0 corrupt: 100%|██████████| 24/24 [00:00<00:00, 88.58it/ss
+train: New cache created: D:\dev\php\magook\trunk\server\learn-yolo\datasets\simd\labels\train.cache
+val: Scanning D:\dev\php\magook\trunk\server\learn-yolo\datasets\simd\labels\test... 20 images, 0 backgrounds, 0 corrupt: 100%|██████████| 20/20 [00:00<00:00, 276.82it/s]
+val: New cache created: D:\dev\php\magook\trunk\server\learn-yolo\datasets\simd\labels\test.cache
+Plotting labels to runs\train\exp4\labels.jpg...
+optimizer: 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically...
+optimizer: AdamW(lr=0.000526, momentum=0.9) with parameter groups 81 weight(decay=0.0), 88 weight(decay=0.0005), 87 bias(decay=0.0)
+Image sizes 640 train, 640 val
+Using 0 dataloader workers
+Logging results to runs\train\exp4
+Starting training for 10 epochs...
+Closing dataloader mosaic
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       1/10         0G      2.332      5.702       1.51          2        640: 100%|██████████| 24/24 [00:20<00:00,  1.20it/s]]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 10/10 [00:06<00:00,  1.58it/s]
+                   all         20        146          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       2/10         0G      2.327      6.118      1.462          5        640: 100%|██████████| 24/24 [00:15<00:00,  1.58it/s]]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 10/10 [00:03<00:00,  3.16it/s]
+                   all         20        146          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       3/10         0G      2.239      5.617      1.536          4        640: 100%|██████████| 24/24 [00:14<00:00,  1.69it/s]]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 10/10 [00:03<00:00,  3.06it/s]
+                   all         20        146     0.0224      0.102     0.0308     0.0152
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       4/10         0G      2.199      5.524      1.471          9        640: 100%|██████████| 24/24 [00:13<00:00,  1.78it/s]]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 10/10 [00:03<00:00,  2.84it/s]
+                   all         20        146     0.0224      0.102     0.0308     0.0152
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       5/10         0G       2.15      5.443      1.409          1        640: 100%|██████████| 24/24 [00:13<00:00,  1.79it/s]]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 10/10 [00:03<00:00,  3.24it/s]
+                   all         20        146     0.0224      0.102     0.0308     0.0152
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       6/10         0G      1.882      5.329      1.337          5        640: 100%|██████████| 24/24 [00:13<00:00,  1.72it/s]]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 10/10 [00:03<00:00,  3.07it/s]
+                   all         20        146    0.00469      0.184     0.0375     0.0216
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       7/10         0G      2.071       5.78      1.363         22        640: 100%|██████████| 24/24 [00:13<00:00,  1.77it/s]]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 10/10 [00:03<00:00,  2.99it/s]
+                   all         20        146    0.00469      0.184     0.0375     0.0216
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       8/10         0G      1.929      5.379      1.376          2        640: 100%|██████████| 24/24 [00:13<00:00,  1.76it/s]]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 10/10 [00:03<00:00,  2.97it/s]
+                   all         20        146      0.823    0.00714     0.0493     0.0291
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       9/10         0G      1.745      5.327      1.143          2        640: 100%|██████████| 24/24 [00:13<00:00,  1.79it/s]]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 10/10 [00:03<00:00,  3.05it/s]
+                   all         20        146      0.823    0.00714     0.0493     0.0291
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      10/10         0G      1.818      5.315      1.221          4        640: 100%|██████████| 24/24 [00:13<00:00,  1.78it/s]]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 10/10 [00:03<00:00,  2.90it/s]
+                   all         20        146      0.823    0.00714     0.0493     0.0291
+
+10 epochs completed in 0.052 hours.
+Optimizer stripped from runs\train\exp4\weights\last.pt, 5.5MB
+Optimizer stripped from runs\train\exp4\weights\best.pt, 5.5MB
+
+Validating runs\train\exp4\weights\best.pt...
+Ultralytics 8.3.89 🚀 Python-3.11.4 torch-2.6.0+cpu CPU (Intel Core(TM) i7-4790 3.60GHz)
+YOLO11n summary (fused): 100 layers, 2,585,077 parameters, 0 gradients, 6.3 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 10/10 [00:03<00:00,  3.25it/s]
+                   all         20        146      0.823    0.00714     0.0486     0.0289
+                   car          7         50          1          0          0          0
+                 Truck          5         16          1          0          0          0
+                   Van          9         23          1          0          0          0
+          Long Vehicle          1          7          1          0    0.00252   0.000757
+                   Bus          3          5          1          0    0.00539   0.000539
+              Airliner         14         14      0.231     0.0714      0.392      0.243
+      Trainer Aircraft          2         11          1          0     0.0862     0.0452
+                Others          5         10          1          0          0          0
+           Stair Truck          5          6          0          0          0          0
+        Pushback Truck          3          4          1          0          0          0
+Speed: 3.8ms preprocess, 120.5ms inference, 0.0ms loss, 5.8ms postprocess per image
+Results saved to runs\train\exp4
+...
+...
+```
+
+从输出信息可以看到训练后模型权重保存在`runs\train\exp4\weights`，当然这不是固定的，要以输出为准。
+
+**验证模型**
+
+Validation Settings：https://docs.ultralytics.com/usage/cfg/#validation-settings
+
+```python
+def val():
+    os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
+    model = YOLO("runs/train/exp4/weights/best.pt")
+    results = model.val(data='./simd.yaml', split='val', batch=1, project='runs/val', name='exp', half=False)
+```
+
+```bash
+Ultralytics 8.3.89 🚀 Python-3.11.4 torch-2.6.0+cpu CPU (Intel Core(TM) i7-4790 3.60GHz)
+YOLO11n summary (fused): 100 layers, 2,585,077 parameters, 0 gradients, 6.3 GFLOPs
+val: Scanning D:\dev\php\magook\trunk\server\learn-yolo\datasets\simd\labels\test.cache... 20 images, 0 backgrounds, 0 corrupt: 100%|██████████| 20/20 [00:00<?, ?it/s]
+
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 20/20 [00:03<00:00,  5.73it/s]
+                   all         20        146      0.823    0.00714     0.0486     0.0289
+                   car          7         50          1          0          0          0
+                 Truck          5         16          1          0          0          0
+                   Van          9         23          1          0          0          0
+          Long Vehicle          1          7          1          0    0.00252   0.000757
+                   Bus          3          5          1          0    0.00539   0.000539
+              Airliner         14         14      0.231     0.0714      0.392      0.243
+      Trainer Aircraft          2         11          1          0     0.0862     0.0452
+                Others          5         10          1          0          0          0
+           Stair Truck          5          6          0          0          0          0
+        Pushback Truck          3          4          1          0          0          0
+Speed: 2.8ms preprocess, 144.3ms inference, 0.0ms loss, 5.9ms postprocess per image
+Results saved to runs\val\exp
+```
+
+
+
+**模型预测**
+
+```python
+def predict2():
+    model = YOLO("runs/train/exp4/weights/best.pt")
+    results = model(["datasets/simd/images/train/0011.jpg"])
+
+    for k, result in enumerate(results):
+        filename = util.generate_random_string(15)
+        result.save(filename="imgs_result/"+filename+".jpg")
+```
+
+但是它并没有检测到对象。。。
+
+于是将 train 的 epochs 改成 100，重新训练。这次它能识别到了。
+
+```bash
+0: 480x640 2 Airliners, 134.8ms
+Speed: 5.4ms preprocess, 134.8ms inference, 2.0ms postprocess per image at shape (1, 3, 480, 640)
+```
+
+![image-20250319113839719](D:\dev\php\magook\trunk\server\md\img\image-20250319113839719.png)
+
+
+
+**模型导出**
+
+将 pt 模型导出为其他格式的。
+
+支持的格式：https://docs.ultralytics.com/tasks/detect/#export
+
+
+
+
+
+训练YOLO11模型 https://blog.csdn.net/StopAndGoyyy/article/details/143169639
+
+
+
+
+
+
 
 
 
